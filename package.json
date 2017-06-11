@@ -2,7 +2,7 @@
   "name": "all",
   "version": "0.0.0",
   "private": true,
-  "author": "Josh Hawkins <jkhaccounts@gmail.com>",
+  "author": "Wesley Andrade <wafermonster@yahoo.com>",
   "description": "GroupMe @all",
   "dependencies": {
     "hubot-maps": "0.0.2",
