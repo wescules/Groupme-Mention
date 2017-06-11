@@ -62,7 +62,7 @@ module.exports = (robot) ->
       res.send "#{target}: #{found}"
     else
       res.send "Could not find a user with the name #{target}"
-
+    """Get robot command"""
   robot.hear /get name (.*)/i, (res) ->
     """Get name command"""
     target = res.match[1]
