@@ -1,4 +1,3 @@
-
 https = require 'https'
 
 room_id = process.env.HUBOT_GROUPME_ROOM_ID
@@ -122,16 +121,21 @@ module.exports = (robot) ->
       text = "Please check the GroupMe, everyone."
 
     message =
-      'text': 'eloo',
+      'text': text,
       'bot_id': bot_id,
       'attachments': [
-        
+        "loci": [],
         "type": "mentions",
-        "user_ids": ["27844220"]
+        "user_ids": []
       ]
 
     i = 0
-    
+    for user, values of users
+      if user in blacklist
+        continue
+      message.attachments[0].loci.push([i, i+1])
+      message.attachments[0].user_ids.push(user)
+      i += 1
 
     json = JSON.stringify(message)
 
