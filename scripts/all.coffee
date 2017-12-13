@@ -130,7 +130,58 @@ module.exports = (robot) ->
       ]
 
     i = 0
-    xD = [27844220, 46185459]
+    xD = [27844220]
+    for user in xD
+      if user in blacklist
+        continue
+      message.attachments[0].loci.push([i, i+1])
+      message.attachments[0].user_ids.push(user)
+      res.send user
+      
+      i += 1
+   
+    json = JSON.stringify(message)
+    
+    
+    
+    options =
+      agent: false
+      host: "api.groupme.com"
+      path: "/v3/bots/post"
+      port: 443
+      method: "POST"
+      headers:
+        'Content-Length': json.length
+        'Content-Type': 'application/json'
+        'X-Access-Token': token
+
+    req = https.request options, (response) ->
+      data = ''
+      response.on 'data', (chunk) -> data += chunk
+      response.on 'end', ->
+        console.log "[GROUPME RESPONSE] #{response.statusCode} #{data}"
+    req.end(json)
+    sleep 10* 60000
+    
+  robot.hear /(.*)@as(.*)/i, (res) ->
+    """@all command"""
+    text = res.match[0]
+    users = robot.brain.users()
+
+    if text.length < users.length
+      text = "Please check the GroupMe, everyone."
+
+    message =
+      'text': "hi",
+      'bot_id': bot_id,
+      'attachments': [
+        "loci": []
+        "type": "mentions",
+        "user_ids": []
+      ]
+
+    i = 0
+    xD = [46185459]
     for user in xD
       if user in blacklist
         continue
