@@ -122,7 +122,7 @@ module.exports = (robot) ->
       text = "Please check the GroupMe, everyone."
 
     message =
-      'text': text,
+      'text': 'eloo',
       'bot_id': bot_id,
       'attachments': [
         
