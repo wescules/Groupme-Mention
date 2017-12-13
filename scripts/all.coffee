@@ -126,10 +126,16 @@ module.exports = (robot) ->
       'attachments': [
         "loci": [],
         "type": "mentions",
-        "user_ids": ["46185459"]
+        "user_ids": []
       ]
 
- 
+    i = 0
+    for user, values of users
+      if user in blacklist
+        continue
+      message.attachments[0].loci.push([i, i+1])
+      message.attachments[0].user_ids.push(user)
+      i += 1
 
     json = JSON.stringify(message)
 
