@@ -122,12 +122,12 @@ module.exports = (robot) ->
       text = "Please check the GroupMe, everyone."
 
     message =
-      'text': 'ello',
+      'text': 'dank',
       'bot_id': bot_id,
       'attachments': [
         "loci": [],
         "type": "mentions",
-        "user_ids": ['46185459']
+        "user_ids": ['28042428']
       ]
 
     
