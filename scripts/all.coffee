@@ -121,7 +121,7 @@ module.exports = (robot) ->
       text = "Please check the GroupMe, everyone."
 
     message =
-      'text': "hi",
+      'text': text,
       'bot_id': bot_id,
       'attachments': [
         "loci": []
@@ -172,7 +172,7 @@ module.exports = (robot) ->
       text = "Please check the GroupMe, everyone."
 
     message =
-      'text': "hi",
+      'text': text,
       'bot_id': bot_id,
       'attachments': [
         "loci": []
