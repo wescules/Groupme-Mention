@@ -1,6 +1,6 @@
-# GroupMe @all
+# GroupMe @Mention
 
-@all is a GroupMe chat bot built on [Hubot][hubot]. It was configured to be
+@Mention is a GroupMe chat bot built on [Hubot][hubot]. It was configured to be
 deployed on [Heroku][heroku] to get you up and running as quick as possible.
 
 [heroku]: http://www.heroku.com
@@ -27,13 +27,19 @@ Deploy to heroku easily!
 
 Start by configuring the environment variables below:
 
-- HUBOT_GROUPME_TOKEN
+- HUBOT_GROUPME_TOKEN``
 - HUBOT_GROUPME_ROOM_ID
 - HUBOT_GROUPME_BOT_ID
 
 And optionally configure a Redis server for blacklist persistence.
 
 
+###Add Additional Groups
+
+Copy/paste the robot.hear @e1/@e2 fucntion and add uers ids to the xD array
+
+get user ids from:
+<code>  curl -m https://api.groupme.com/v3/groups?token=token123</code>
 ### Running
 
 Once configured, you can run the bot with `./bin/hubot -a groupme`. 
