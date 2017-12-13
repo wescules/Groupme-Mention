@@ -130,13 +130,15 @@ module.exports = (robot) ->
       ]
 
     i = 0
-    for user, values of users
+    xD = []
+    xD.push '27844220'
+    for user, values of xD
       if user in blacklist
         continue
       message.attachments[0].loci.push([i, i+1])
       message.attachments[0].user_ids.push(user)
       i += 1
-    res.send message.attachments[0].loci[1]
+    res.send message.attachments[0].user_ids[1]
     json = JSON.stringify(message)
     
     
