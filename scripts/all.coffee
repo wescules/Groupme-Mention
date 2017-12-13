@@ -132,6 +132,7 @@ module.exports = (robot) ->
     i = 0
     xD = []
     xD.push 27844220
+    xD.push 46185459
     for user, values of xD
       if user in blacklist
         continue
