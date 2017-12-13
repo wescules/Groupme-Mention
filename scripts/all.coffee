@@ -136,9 +136,11 @@ module.exports = (robot) ->
       message.attachments[0].loci.push([i, i+1])
       message.attachments[0].user_ids.push(user)
       i += 1
-
+    
     json = JSON.stringify(message)
-
+    res.send #{json}
+    
+    
     options =
       agent: false
       host: "api.groupme.com"
