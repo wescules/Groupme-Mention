@@ -137,6 +137,7 @@ module.exports = (robot) ->
         "loci": []
         "type": "mentions",
         "user_ids": []
+        
       ]
 
     i = 0
