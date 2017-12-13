@@ -130,10 +130,8 @@ module.exports = (robot) ->
       ]
 
     i = 0
-    xD = []
-    xD.push 27844220
-    xD.push 46185459
-    for user, values of xD
+    xD = [27844220, 46185459]
+    for user in xD
       if user in blacklist
         continue
       message.attachments[0].loci.push([i, i+1])
