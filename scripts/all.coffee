@@ -22,6 +22,7 @@ module.exports = (robot) ->
   addToBlacklist = (item) ->
     blacklist.push item
     saveBlacklist()
+    
 
   removeFromBlacklist = (item) ->
     index = blacklist.indexOf item
