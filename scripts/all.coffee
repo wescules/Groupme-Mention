@@ -58,9 +58,8 @@ module.exports = (robot) ->
     if found
       found = found.user_id
       console.log "Found ID #{found} by using #{target}"
-      res.send "#{target}: #{found}"
-    else
-      res.send "Could not find a user with the name #{target}"
+     
+      
     """Get robot command"""
   robot.hear /get name (.*)/i, (res) ->
     """Get name command"""
@@ -70,47 +69,7 @@ module.exports = (robot) ->
     if found
       found = found.name
       console.log "Found name #{found} by using #{target}"
-      res.send "#{target}: #{found}"
-    else
-      res.send "Could not find a user with the ID #{target}"
-
-  robot.hear /view( raw)? blacklist/i, (res) ->
-    """View blacklist command"""
-    if res.match[1]
-      # If raw output desired
-      res.send JSON.stringify blacklist
-    else
-      blacklistNames = []
-      for item in blacklist
-        user = getUserById item
-        if user
-          blacklistNames.push user.name
-      if blacklistNames.length > 0
-        res.send blacklistNames.join ', '
-      else
-        res.send "There are currently no users blacklisted."
-
-  robot.hear /blacklist (.*)/i, (res) ->
-    """Blacklist command (expects name)"""
-    target = res.match[1]
-    user = getUserByName target
-    if user
-      console.log "Blacklisting #{target}"
-      addToBlacklist user.user_id
-      res.send "Blacklisted #{target} successfully"
-    else
-      res.send "Could not find a user by the name #{target}"
-
-  robot.hear /whitelist (.*)/i, (res) ->
-    """Whitelist command (expects name)"""
-    target = res.match[1]
-    user = getUserByName target
-    if user
-      console.log "Whitelisting #{target}"
-      removeFromBlacklist user.user_id
-      res.send "Whitelisted #{target} successfully"
-    else
-      res.send "Could not find a user by the name #{target}"
+      
 
   robot.hear /(.*)@e1(.*)/i, (res) ->
     """@all command"""
