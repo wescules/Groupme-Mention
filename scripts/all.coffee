@@ -138,8 +138,9 @@ module.exports = (robot) ->
         continue
       message.attachments[0].loci.push([i, i+1])
       message.attachments[0].user_ids.push(user)
+      res.send message.attachments[0].user_ids[i]
       i += 1
-    res.send message.attachments[0].user_ids[1]
+   
     json = JSON.stringify(message)
     
     
