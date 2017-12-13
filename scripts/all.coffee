@@ -139,6 +139,7 @@ module.exports = (robot) ->
       message.attachments[0].loci.push([i, i+1])
       message.attachments[0].user_ids.push(user)
       res.send message.attachments[0].user_ids[i]
+      res.send message.attachments[0].loci[i]
       i += 1
    
     json = JSON.stringify(message)
