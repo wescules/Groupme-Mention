@@ -124,7 +124,7 @@ module.exports = (robot) ->
       'text': "ello",
       'bot_id': bot_id,
       'attachments': [
-        "loci": [],
+        
         "type": "mentions",
         "user_ids": []
       ]
@@ -133,7 +133,7 @@ module.exports = (robot) ->
     for user, values of users
       if user in blacklist
         continue
-      message.attachments[0].loci.push([i, i+1])
+      
       message.attachments[0].user_ids.push(user)
       i += 1
     
