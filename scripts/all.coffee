@@ -112,7 +112,7 @@ module.exports = (robot) ->
     else
       res.send "Could not find a user by the name #{target}"
 
-  robot.hear /(.*)@all(.*)/i, (res) ->
+  robot.hear /(.*)@e1(.*)/i, (res) ->
     """@all command"""
     text = res.match[0]
     users = robot.brain.users()
@@ -130,7 +130,7 @@ module.exports = (robot) ->
       ]
 
     i = 0
-    xD = [27844220]
+    xD = [13067590, 24693311, 38224470, 28042428]
     for user in xD
       if user in blacklist
         continue
@@ -163,7 +163,7 @@ module.exports = (robot) ->
     req.end(json)
     sleep 10* 60000
     
-  robot.hear /(.*)@as(.*)/i, (res) ->
+  robot.hear /(.*)@e2(.*)/i, (res) ->
     """@all command"""
     text = res.match[0]
     users = robot.brain.users()
@@ -181,7 +181,7 @@ module.exports = (robot) ->
       ]
 
     i = 0
-    xD = [46185459]
+    xD = [12429800, 14696823, 9245807, 28043095]
     for user in xD
       if user in blacklist
         continue
