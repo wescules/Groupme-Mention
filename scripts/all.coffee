@@ -4,6 +4,12 @@ room_id = process.env.HUBOT_GROUPME_ROOM_ID
 bot_id = process.env.HUBOT_GROUPME_BOT_ID
 token = process.env.HUBOT_GROUPME_TOKEN
 
+setInterval (->
+  http.get 'https://terv-pokemon.herokuapp.com/'
+  return
+), 300000
+# every 5 minutes (300000)
+
 module.exports = (robot) ->
   blacklist = []
 
